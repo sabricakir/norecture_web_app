@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_134417) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_143937) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_134417) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
   end
 
   create_table "products", force: :cascade do |t|
@@ -78,7 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_134417) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "sex"
+    t.integer "gender"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
