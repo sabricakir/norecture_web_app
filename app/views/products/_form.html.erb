@@ -32,8 +32,8 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :sex, class:"block" %>
-    <%= form.select :sex, Product.sexes.keys.map{|sex| [sex.titleize, sex]} %>
+    <%= form.label :gender, class:"block" %>
+    <%= form.select :gender, Product.genders.keys.map{|gender| [gender.titleize, gender]} %>
   </div>
 
   <div class="my-5" data-controller="multi-upload">
