@@ -31,12 +31,16 @@
     <%= form.text_area :description, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :sex, class:"block" %>
+    <%= form.select :sex, Product.sexes.keys.map{|sex| [sex.titleize, sex]} %>
+  </div>
+
   <div class="my-5" data-controller="multi-upload">
     <label>
-      <%=form.file_field :photos, :multiple => true, data: {action: "multi-upload#addFile" } %>
+      <%= form.file_field :photos, :multiple => true, data: {action: "multi-upload#addFile" } %>
     </label>
     <ul data-multi-upload-target="files">
-
     </ul>
   </div>
 

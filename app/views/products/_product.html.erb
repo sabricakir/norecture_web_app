@@ -20,6 +20,11 @@
   </p>
 
   <p class="my-5">
+    <strong class="block font-medium mb-1">Sex:</strong>
+    <%= product.sex %>
+  </p>
+
+  <p class="my-5">
     <% product.photos.each do |photo| %>
       <%= image_tag(photo, :width => 200) %>
     <% end %>
