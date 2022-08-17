@@ -1,0 +1,2 @@
+class Mannequin < ApplicationRecord
+end

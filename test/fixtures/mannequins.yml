@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  waist: 1
+  shoulder: 1
+  chest: 1
+  length: 1
+  hip: 1
+
+two:
+  waist: 1
+  shoulder: 1
+  chest: 1
+  length: 1
+  hip: 1
