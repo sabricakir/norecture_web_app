@@ -3,12 +3,12 @@
     <div class="bg-white w-full ">
       <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="index.html" class="flex items-center animate-pulse">
+          <%= link_to root_path, class:"flex items-center animate-pulse" do %>
             <h3 class="text-2xl font-medium text-black ">
               Norecture
             </h3>
             <p>Store</p>
-          </a>
+          <% end %>
           <div class="flex md:order-2">
             <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -39,6 +39,8 @@
     </div>
   </div>
 </header>
+
+
 
 <section>
   <div id="default-carousel" class="relative w-full h-auto mt-0" data-carousel="slide">
@@ -169,10 +171,16 @@
     </div>
   </div>
 
+  <%= search_form_for @q, url: 'store' do |f| %>
+
+    <%= f.label :name_cont %>
+    <%= f.search_field :name_cont %>
+
+    <%= f.submit %>
+  <% end %>
+
   <div class="grid md:grid-cols-3 flex justify-items-center px-8 mt-16 mb-6">
     <%= render @products %>
-
-
   </div>
   <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
 
