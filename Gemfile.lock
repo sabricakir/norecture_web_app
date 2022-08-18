@@ -89,8 +89,6 @@ GEM
       reline (>= 0.3.1)
     digest (3.1.0)
     erubi (1.11.0)
-    faker (1.9.6)
-      i18n (>= 0.7)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -167,6 +165,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    ransack (3.2.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -221,12 +223,12 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
-  faker (~> 1.6, >= 1.6.3)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
+  ransack (~> 3.2, >= 3.2.1)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
