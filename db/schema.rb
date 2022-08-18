@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_143937) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_18_065151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_143937) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "mannequins", force: :cascade do |t|
+  create_table "models", force: :cascade do |t|
     t.integer "waist"
     t.integer "shoulder"
     t.integer "chest"
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_143937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_url"
+    t.integer "product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -80,6 +81,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_17_143937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "gender"
+    t.integer "product_type_id"
+    t.integer "model_id"
+    t.integer "color_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

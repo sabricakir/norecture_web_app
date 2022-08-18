@@ -1,2 +1,0 @@
-class Mannequin < ApplicationRecord
-end

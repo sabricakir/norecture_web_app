@@ -1,10 +1,10 @@
-<%= form_with(model: mannequin, class: "contents") do |form| %>
-  <% if mannequin.errors.any? %>
+<%= form_with(model: model, class: "contents") do |form| %>
+  <% if model.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(mannequin.errors.count, "error") %> prohibited this mannequin from being saved:</h2>
+      <h2><%= pluralize(model.errors.count, "error") %> prohibited this model from being saved:</h2>
 
       <ul>
-        <% mannequin.errors.each do |error| %>
+        <% model.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
