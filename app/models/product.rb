@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  before_save :set_default_attributes
+
   enum gender: [:women, :men, :unisex]
 
   has_many_attached :photos
@@ -19,4 +21,10 @@ class Product < ApplicationRecord
   validates :description,
             presence:true,
             length: {maximum: 500}
+  private
+  def set_default_attributes
+    self.name = name.humanize if name.present?
+    self.material = material.humanize if material.present?
+  end
+
 end
