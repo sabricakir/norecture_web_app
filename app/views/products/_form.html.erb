@@ -52,8 +52,12 @@
   </div>
 
   <div class="my-5" data-controller="multi-upload">
-    <label>
-      <%= form.file_field :photos, :multiple => true, data: {action: "multi-upload#addFile" } %>
+    <%= form.label "Ürün Resimleri", class: "block mb-4"%>
+    <label class="bg-black py-3 px-5 text-center text-white rounded-lg hover:cursor-pointer hover:ring-offset-1 hover:ring-2 ring-gray-500 ease-out duration-300">
+      Göz At
+      <span class="hidden">
+        <%= form.file_field :photos, :multiple => true, data: {action: "multi-upload#addFile" } %>
+      </span>
     </label>
     <ul data-multi-upload-target="files">
     </ul>
