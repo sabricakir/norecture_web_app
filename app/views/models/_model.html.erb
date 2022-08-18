@@ -1,32 +1,32 @@
-<div id="<%= dom_id mannequin %>">
+<div id="<%= dom_id model %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Waist:</strong>
-    <%= mannequin.waist %>
+    <%= model.waist %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Shoulder:</strong>
-    <%= mannequin.shoulder %>
+    <%= model.shoulder %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Chest:</strong>
-    <%= mannequin.chest %>
+    <%= model.chest %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Length:</strong>
-    <%= mannequin.length %>
+    <%= model.length %>
   </p>
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Hip:</strong>
-    <%= mannequin.hip %>
+    <%= model.hip %>
   </p>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this mannequin", mannequin, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this mannequin', edit_mannequin_path(mannequin), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Show this model", model, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this model', edit_model_path(model), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
 </div>
