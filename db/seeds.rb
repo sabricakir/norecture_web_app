@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Color.create(hex_code: '#000000', name: 'Black')
+Model.create(name:"Rıza", waist: 92, shoulder: 92, chest: 92, length: 92, hip: 92)
+ProductType.create(name: 'Shirt')
+ProductUrl.create(body: 'https://www.google.com')

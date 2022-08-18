@@ -36,6 +36,21 @@
     <%= form.select :gender, Product.genders.keys.map{|gender| [gender.titleize, gender]} %>
   </div>
 
+  <div class="my-5">
+    <%= form.label :product_type_id, class:"block" %>
+    <%= form.select :product_type_id, ProductType.all.map{|pt| [pt.name.humanize, pt.id]} %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :color_id, class:"block" %>
+    <%= form.select :color_id, Color.all.map{|c| [c.name.humanize, c.id]} %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :model_id, class:"block" %>
+    <%= form.select :model_id, Model.all.map{|m| [m.name.humanize, m.id]} %>
+  </div>
+
   <div class="my-5" data-controller="multi-upload">
     <label>
       <%= form.file_field :photos, :multiple => true, data: {action: "multi-upload#addFile" } %>

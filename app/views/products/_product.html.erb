@@ -25,6 +25,33 @@
   </p>
 
   <p class="my-5">
+    <strong class="block font-medium mb-1">Model:</strong>
+    <%= product.model.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Color:</strong>
+    <%= product.color.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Product Type:</strong>
+    <%= product.product_type.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Product Urls:</strong>
+    <ul>
+      <% product.product_urls.each do |url| %>
+        <li>
+          <%= url.body %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+
+
+  <p class="my-5 grid grid-cols-3 gap-4">
     <% product.photos.each do |photo| %>
       <%= image_tag(photo, :width => 200) %>
     <% end %>
