@@ -1,65 +1,11 @@
 <div id="<%= dom_id product %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= product.name %>
-  </p>
+  <div class=" mb-12 w-full">
+    <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+      <%= link_to image_tag(product.photos.first, :class => "group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full"), product %>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Price:</strong>
-    <%= product.price %>
-  </p>
+      <p class="mt-4 text-gray-900"><%= product.name %></p>
+      <p class="font-bold mt-2"><%= product.price %> $</p>
+    </div>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Material:</strong>
-    <%= product.material %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Gender:</strong>
-    <%= product.gender %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Model:</strong>
-    <%= product.model.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Color:</strong>
-    <%= product.color.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Product Type:</strong>
-    <%= product.product_type.name %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Product Urls:</strong>
-    <ul>
-      <% product.product_urls.each do |url| %>
-        <li>
-          <%= url.body %>
-        </li>
-      <% end %>
-    </ul>
-  </p>
-
-
-  <p class="my-5 grid grid-cols-3 gap-4">
-    <% product.photos.each do |photo| %>
-      <%= image_tag(photo, :width => 200) %>
-    <% end %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this product", product, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this product', edit_product_path(product), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
 </div>
