@@ -1,7 +1,6 @@
 class ProductUrl < ApplicationRecord
   belongs_to :product
 
-
   validates :body,
             presence:true,
             length: {maximum: 85}
