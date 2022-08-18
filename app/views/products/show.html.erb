@@ -1,15 +1,247 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+<header id="home" class="sticky top-0 block z-10">
+  <div class="h-auto flex justify-center items-center mx-auto flex-col ">
+    <div class="bg-white w-full">
+      <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+          <a href="index.html" class="flex items-center animate-pulse">
+            <h3 class="text-2xl font-medium text-black ">
+              Norecture
+            </h3>
+            <p>Store</p>
+          </a>
+          <div class="flex md:order-2">
+            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-cta" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+            </button>
+          </div>
+          <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+            <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+
+              <li>
+                <a href="#products" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Man</a>
+              </li>
+              <li>
+                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Woman</a>
+              </li>
+              <li>
+                <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
+              </li>
+              <li>
+                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<section class="product flex flex-col md:flex-row justify-start items-start md:px-10 2xl:px-80 mb-16">
+  <div class="md:sticky md:top-14 ">
+    <div class="hidden md:flex  md:flex-col w-16">
+      <% @product.photos.each do |photo| %>
+        <%= image_tag(photo, :class => "w-full mt-4") %>
+      <% end %>
+
+    </div>
+  </div>
+  <div class="hidden md:flex flex-col w-[800px] ml-16">
+    <% @product.photos.each do |photo| %>
+      <%= image_tag(photo, :class => "w-full mb-16 mt-4") %>
     <% end %>
 
-    <%= render @product %>
-
-    <%= link_to 'Edit this product', edit_product_path(@product), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this product', product_path(@product), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to products', products_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
-</div>
+
+
+  <div id="default-carousel" class="relative w-full h-auto mt-0 md:hidden" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-96 overflow-hidden rounded-lg md:h-screen">
+      <!-- Item 1 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <span class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+        <img src="assets/images/product_woman.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+      </div>
+      <!-- Item 2 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="assets/images/product_woman2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+      </div>
+      <!-- Item 3 -->
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="assets/images/product_woman3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+      </div>
+      <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <img src="assets/images/product3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
+      </div>
+    </div>
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+            <span class="sr-only">Previous</span>
+                      </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+            <span class="sr-only">Next</span>
+          </span>
+    </button>
+  </div>
+
+  <!--
+      <img src="assets/images/body_challenge.png" class="h-auto w-full px-36  mt-12 " alt="">
+    -->
+  </div>
+
+
+
+  <div class="flex flex-col w-full px-2 md:px-0 md:w-96 md:mr-8 md:ml-8 mt-6 md:sticky top-0 items-center md:items-start">
+    <p class="font-serif text-xl mb-8 text-gray-800">Norecture</p>
+    <hr>
+    <p class="font-bold font-serif text-2xl text-gray-700 text-center md:text-start">Baskılı oversize Tshirt Erkek</p>
+    <p class="font-serif text-3xl text-gray-500 text-center md:text-start mt-4">350 TL</p>
+    <p class="font-sans text-base text-gray-500 text-center md:text-start mt-8">%100 Cotton </p>
+    <p class="font-sans text-base text-gray-500 text-center md:text-start mt-8">With the dyeing technique preferred at the stage of coloring the threads; the amount of water consumed and the damage to the environment are minimized.</p>
+    <p class="font-sans text-base text-gray-500 text-center md:text-start mt-8">The product sent as washed; Eliminates the pulling problem</p>
+    <div class="flex justify-start items-center mt-8">
+      <p class="p-3 bg-[<%= @product.color.hex_code %>] rounded-full w-3 "></p>
+      <p class="font-sans text-base text-gray-500 ml-2"> Black</p>
+    </div>
+    <p class="font-bold font-serif text-2xl text-gray-700 mt-10 text-center md:text-start">Modal dimensions:</p>
+    <p class="font-serif text-base text-gray-500 mt-8 text-center md:text-start">
+      Lenght: 180 cm <br> Chest: 110 cm <br> Shoulder: 120 cm <br> Waist: 81 cm <br> Hip: 60cm
+    </p>
+    <p class="font-bold font-serif text-2xl text-gray-700 mt-10 text-center md:text-start">Buy now:</p>
+    <a href="">
+      <img src="https://cdn.dsmcdn.com/web/logo/ty-web.svg" alt="trendyol" class="md:w-48 mt-4 h-14 md:h-auto rounded-lg hover:px-2 ease-in duration-300">
+    </a>
+    <a href="" class="mt-2">
+      <img src="https://www.shopier.com/image/shopier_logo_1.svg" alt="trendyol" class="md:w-48 mt-4 h-10 md:h-auto rounded-lg hover:px-2 ease-in duration-300">
+    </a>
+    <a href="" class="mt-6">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="trendyol" class="md:w-48 mt-4 h-10 md:h-auto rounded-lg hover:px-2 ease-in duration-300">
+    </a>
+
+  </div>
+</section>
+<hr>
+<section id="products">
+  <div class="grid md:grid-cols-3 flex justify-items-center px-8 mt-16 mb-6">
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product_woman2.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product3.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product2.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product_woman.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+    <div class=" mb-12 w-full">
+      <div class="group w-full flex flex-col px-4 pb-6 rounded-lg">
+        <img src="assets/images/product_woman3.jpg" class="group-hover:p-2 ease-in duration-300 object-cover h-96 md:h-[700px] w-full" alt="">
+        <p class="mt-4 text-gray-900">Norecture Oversize Unisex Tshirt</p>
+        <p class="font-bold mt-2">350 TL</p>
+      </div>
+    </div>
+
+  </div>
+  <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
+
+</section>
+
+<section id="about">
+  <div id="contact" class="bg-gradient-to-r from-black to-gray-500 h-auto flex justify-between items-center mx-auto grid lg:grid-cols-2 pt-8 lg:pt-0">
+    <div>
+      <div class="text-center">
+        <h1 class="text-7xl font-bold text-white">Norecture</h1>
+      </div>
+    </div>
+    <div class="p-16 text-center text-white">
+      <h1 class="text-2xl mb-6">About Us</h1>
+      <p class="px-14">
+        Norecture is a brand that was established in 2022 and produces products for its customers without sacrificing quality. Our vision is to combine fashion and quality. Our brand, which was established for this purpose, continues to design and produce new
+        products every day.
+      </p>
+      <br /><br />
+      <h1 class="text-2xl mb-6">Contact</h1>
+      <p class="px-14">
+        Tel: 05434497929 <br /> Address: Norecture Comp. <br> 132, My Street, <br> Kingston, New York 12401 <br> United States
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="text-center w-full mt-8 bottom-0 left-0">
+  <p class="text-black opacity-75 italic mb-6">© Norecture- 2022</p>
+</footer>
