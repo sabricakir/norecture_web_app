@@ -6,4 +6,6 @@ class Product < ApplicationRecord
   belongs_to :color
   belongs_to :product_type
   belongs_to :model
+
+  validates :name, presence:true
 end
