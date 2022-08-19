@@ -9,6 +9,7 @@
             </h3>
             <p>Store</p>
           </div>
+
           <div class="flex md:order-2">
             <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -39,6 +40,8 @@
     </div>
   </div>
 </header>
+
+
 
 <section>
   <div id="default-carousel" class="relative w-full h-auto mt-0" data-carousel="slide">
@@ -168,6 +171,15 @@
       </a>
     </div>
   </div>
+
+  <%= search_form_for @q, url: 'store' do |f| %>
+
+    <%= f.label :name_cont %>
+    <%= f.search_field :name_cont %>
+
+    <%= f.submit %>
+  <% end %>
+
 
   <div class="grid md:grid-cols-3 flex justify-items-center px-8 mt-16 mb-6">
     <%= render @products %>
