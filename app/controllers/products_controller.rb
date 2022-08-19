@@ -3,13 +3,13 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
+    sleep 1
     @products = Product.all
   end
 
   # GET /products/1 or /products/1.json
   def show
     @products = Product.all
-
   end
 
   # GET /products/new
