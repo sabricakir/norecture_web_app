@@ -3,12 +3,13 @@
     <div class="bg-white w-full ">
       <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <%= link_to root_path, class:"flex items-center animate-pulse" do %>
-            <h3 class="text-2xl font-medium text-black ">
-              Norecture
+          <div class="animate-pulse flex flex-row">
+            <h3 class="text-2xl font-medium text-black">
+              <%= link_to 'Norecture', store_path%>
             </h3>
             <p>Store</p>
-          <% end %>
+          </div>
+
           <div class="flex md:order-2">
             <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -144,28 +145,28 @@
 
 <section id="products">
   <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16">
-
     <div class="relative">
-      <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
+      <a
+        href=""
+        class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"
+      >
         <p class="font-medium">Norecture</p>
         <h1 class="tracking-wider text-7xl font-medium">MAN</h1>
       </a>
-      <a href="#" class="relative">
+      <a class="relative">
         <div class="flex flex-wrap content-center">
-          <%= image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]") %>
+          <%= link_to image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]"), store_path %>
         </div>
       </a>
     </div>
     <div class="relative mt-4 md:mt-0">
-      <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
+      <a href="store.html" class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
         <p class="font-medium">Norecture</p>
         <h1 class="tracking-wider text-7xl font-medium">WOMAN</h1>
       </a>
-      <a href="#" class="relative">
+      <a href="" class="relative">
         <div class="flex flex-wrap content-center">
-          <%= image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]") %>
-
-
+          <%= link_to image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]"), store_path %>
         </div>
       </a>
     </div>
@@ -178,6 +179,7 @@
 
     <%= f.submit %>
   <% end %>
+
 
   <div class="grid md:grid-cols-3 flex justify-items-center px-8 mt-16 mb-6">
     <%= render @products %>

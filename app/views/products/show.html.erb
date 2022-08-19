@@ -3,12 +3,13 @@
     <div class="bg-white w-full">
       <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <a href="index.html" class="flex items-center animate-pulse">
-            <h3 class="text-2xl font-medium text-black ">
-              Norecture
+          <div class="animate-pulse flex flex-row">
+            <h3 class="text-2xl font-medium text-black">
+              <%= link_to 'Norecture', store_path%>
             </h3>
             <p>Store</p>
-          </a>
+          </div>
+
           <div class="flex md:order-2">
             <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -44,15 +45,17 @@
 <section class="product flex flex-col md:flex-row justify-start items-start md:px-10 2xl:px-80 mb-16">
   <div class="md:sticky md:top-14 ">
     <div class="hidden md:flex  md:flex-col w-16">
-      <% @product.photos.each do |photo| %>
-        <%= image_tag(photo, :class => "w-full mt-4") %>
+      <% @product.photos.each_with_index  do |photo, index| %>
+        <a href="#image_<%=index%>">
+          <%= image_tag(photo, :class => "w-full mt-4") %>
+        </a>
       <% end %>
 
     </div>
   </div>
   <div class="hidden md:flex flex-col w-[800px] ml-16">
-    <% @product.photos.each do |photo| %>
-      <%= image_tag(photo, :class => "w-full mb-16 mt-4") %>
+    <% @product.photos.each_with_index do |photo, index| %>
+        <%= image_tag(photo, :class => "w-full mb-16 mt-4", id: "image_"+index.to_s)%>
     <% end %>
 
   </div>
@@ -132,8 +135,8 @@
 
   <div class="flex flex-col w-full px-2 md:px-0 md:w-96 md:mr-8 md:ml-8 mt-6 md:sticky top-0 items-center md:items-start">
     <p class="font-serif text-xl mb-8 text-gray-800">Norecture</p>
-    <hr>
-    <p class="font-bold font-serif text-2xl text-gray-700 text-center md:text-start"><%= @product.name %></p>
+    <hr class="w-full">
+    <p class="font-bold font-serif text-3xl text-gray-700 text-center md:text-start"><%= @product.name %></p>
     <p class="font-serif text-3xl text-gray-500 text-center md:text-start mt-4"><%= @product.price %> $</p>
     <p class="font-sans text-base text-gray-500 text-center md:text-start mt-8"><%= @product.material %></p>
     <p class="font-sans text-base text-gray-500 text-center md:text-start mt-8"><%= @product.description %></p>
