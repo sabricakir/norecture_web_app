@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    sleep 1
     @products = Product.all
   end
 

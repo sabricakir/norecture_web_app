@@ -40,10 +40,10 @@
             <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
 
               <li>
-                <a href="#products" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Man</a>
+                <%= link_to 'Men', store_path(:gender => 'men'), class:"block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" %>
               </li>
               <li>
-                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Woman</a>
+                <%= link_to 'Women', store_path(:gender => 'women'), class:"block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" %>
               </li>
               <li>
                 <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
@@ -207,13 +207,9 @@
     </div>
   </div>
 
-
-
-
   <div id="products" class="min-w-full grid grid-cols-1 md:grid-cols-3 space-x-6 px-8 mt-16 mb-6 mx-auto">
     <%= render @products %>
   </div>
-
 
   <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
 

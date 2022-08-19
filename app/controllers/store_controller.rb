@@ -1,6 +1,9 @@
 class StoreController < ApplicationController
   def index
-    @q = Product.ransack(params[:q])
-    @products = @q.result(distinct:true)
+    if params[:gender]
+      @products = Product.where(gender: params[:gender])
+    else
+      @products = Product.all
+    end
   end
 end
