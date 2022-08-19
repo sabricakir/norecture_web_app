@@ -20,10 +20,10 @@
             <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
 
               <li>
-                <a href="#products" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Man</a>
+                <%= link_to 'Men', store_path(:gender => 'men'), class:"block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" %>
               </li>
               <li>
-                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Woman</a>
+                <%= link_to 'Women', store_path(:gender => 'women'), class:"block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" %>
               </li>
               <li>
                 <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
@@ -171,37 +171,9 @@
     </div>
   </div>
 
-  <%= search_form_for @q, url: 'store' do |f| %>
-
-    <%= f.label :name_cont %>
-    <%= f.search_field :name_cont %>
-
-    <%= f.submit %>
-  <% end %>
-
-
-    <%= turbo_frame_tag 'product_list', src:products_path, lazy: :true do%>
-      <div class="grid grid-cols-1 md:grid-cols-3 space-x-6 px-8 mt-16 mb-6 mx-auto animate-pulse">
-        <div class="h-[750px] my-4 border-2 rounded-lg border-gray-400">
-          <div class="h-3/4 w-full bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-80 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-40 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-        </div>
-
-        <div class="h-[750px] my-4 border-2 rounded-lg border-gray-400">
-          <div class="h-3/4 w-full bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-80 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-40 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-        </div>
-
-        <div class="h-[750px] my-4 border-2 rounded-lg border-gray-400">
-          <div class="h-3/4 w-full bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-80 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-          <div class="w-40 h-8 rounded-lg mt-8 mx-4 bg-gradient-to-r from-gray-200 to-gray-500"></div>
-        </div>
-
-      </div>
-    <%end %>
+  <div id="products" class="min-w-full grid grid-cols-1 md:grid-cols-3 space-x-6 px-8 mt-16 mb-6 mx-auto">
+    <%= render @products %>
+  </div>
 
   <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
 
