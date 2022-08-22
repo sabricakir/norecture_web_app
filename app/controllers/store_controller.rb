@@ -5,7 +5,7 @@ class StoreController < ApplicationController
     else
       @products = Product.all
     end
-    @q = Product.ransack(params[:q])
+    @q = @products.ransack(params[:q])
     @products = @q.result(distinct: true)
   end
 end

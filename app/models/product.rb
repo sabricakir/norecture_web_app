@@ -19,8 +19,7 @@ class Product < ApplicationRecord
             presence:true,
             length: {maximum: 50}
   validates :description,
-            presence:true,
-            length: {maximum: 500}
+            presence:true
   validates :photos,
             presence:true,
             length: {is: 4}

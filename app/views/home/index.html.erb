@@ -20,7 +20,7 @@
                     d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
                   ></path>
                 </svg>
-                <%= link_to 'Store', store_path %>
+                <%= link_to 'Store', store_path%>
               </button>
             <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-cta" aria-expanded="false">
@@ -181,34 +181,24 @@
 
 <div class="parallax h-36 sm:h-48 md:h-56 xl:h-96 bg-fixed bg-center bg-no-repeat bg-cover bg-[url('https://previews.123rf.com/images/tverdohlib/tverdohlib1507/tverdohlib150700142/42333561-sweet-thoughtful-slender-woman-outdoor-in-summer-clothes-in-park-on-green-natural-background-horizon.jpg')]"></div>
 
-<section id="products ">
+
+<section id="products">
   <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16">
     <div class="relative">
-      <a
-        href=""
-        class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"
-      >
-        <p class="font-medium">Norecture</p>
-        <h1 class="tracking-wider text-7xl font-medium">MAN</h1>
-      </a>
-      <a class="relative">
-        <div class="flex flex-wrap content-center">
-          <%= link_to image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]"), store_path %>
-        </div>
-      </a>
+      <%= link_to 'Men' , store_path(:gender => 'men'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300" %>
+      <div class="flex flex-wrap content-center relative">
+        <%= link_to image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]"), store_path(:gender => 'men') %>
+      </div>
+
     </div>
     <div class="relative mt-4 md:mt-0">
-      <a href="store.html" class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300">
-        <p class="font-medium">Norecture</p>
-        <h1 class="tracking-wider text-7xl font-medium">WOMAN</h1>
-      </a>
-      <a href="" class="relative">
-        <div class="flex flex-wrap content-center">
-          <%= link_to image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]"), store_path %>
-        </div>
-      </a>
+      <%= link_to 'Women' , store_path(:gender => 'women'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300" %>
+      <div class="flex flex-wrap content-center relative">
+        <%= link_to image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]"), store_path(:gender => 'women') %>
+      </div>
     </div>
   </div>
+
 </section>
 
 <div class="parallax h-36 sm:h-48 md:h-56 xl:h-96 bg-fixed bg-center bg-no-repeat bg-cover bg-[url('https://img.freepik.com/premium-photo/attractive-girl-resting-riverbank-near-forest-spring-warm-day-relaxing-nature-weekend-girl-jeans-clothes-sitting-near-lake-park-nature-concept-fashion-photoshoot-horizontal_120962-1843.jpg?w=2000')]"></div>
