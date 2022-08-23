@@ -1,54 +1,56 @@
-<header id="home" class="sticky top-0 block z-10">
-  <div class="h-auto flex justify-center items-center mx-auto flex-col ">
-    <div class="bg-white w-full">
-      <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
-          <div class="animate-pulse flex flex-row">
-            <h3 class="text-2xl font-medium text-black">
-              <%= link_to 'Norecture', store_path%>
-            </h3>
-            <p>Store</p>
-          </div>
+<% unless app_mobile? %>
+  <header id="home" class="sticky top-0 block z-10">
+    <div class="h-auto flex justify-center items-center mx-auto flex-col ">
+      <div class="bg-white w-full">
+        <nav class="border-gray-200 px-2 sm:px-4 py-2.5 ">
+          <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <div class="animate-pulse flex flex-row">
+              <h3 class="text-2xl font-medium text-black">
+                <%= link_to 'Norecture', store_path%>
+              </h3>
+              <p>Store</p>
+            </div>
 
-          <div class="flex md:order-2">
-            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-cta" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
-              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-            </button>
-          </div>
-          <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-            <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+            <div class="flex md:order-2">
+              <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                      aria-controls="navbar-cta" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+              </button>
+            </div>
+            <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+              <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
 
-              <li>
-                <a href="#products" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Man</a>
-              </li>
-              <li>
-                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Woman</a>
-              </li>
-              <li>
-                <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
-              </li>
-              <li>
-                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
-              </li>
+                <li>
+                  <a href="#products" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Man</a>
+                </li>
+                <li>
+                  <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Woman</a>
+                </li>
+                <li>
+                  <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
+                </li>
+                <li>
+                  <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
+                </li>
 
-            </ul>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-
-<section class="product flex flex-col md:flex-row justify-start items-start md:px-10 2xl:px-80 mb-16">
+<% end %>
+<section class="product flex flex-col md:flex-row justify-start items-start md:px-10 2xl:px-80 mb-16" data-controller="scroll-page-with-element">
   <div class="md:sticky md:top-14 ">
     <div class="hidden md:flex  md:flex-col w-16">
       <% @product.photos.each_with_index  do |photo, index| %>
-        <a href="#image_<%=index%>">
-          <%= image_tag(photo, :class => "w-full mt-4") %>
-        </a>
+        <button data-action="click->scroll-page-with-element#scrollToElement"
+             data-scroll-page-with-element-id-param="image_<%= index.to_s %>">
+          <%= image_tag(photo, :class => "w-full mt-4")%>
+        </button>
       <% end %>
 
     </div>
@@ -160,13 +162,10 @@
 <hr>
 <section id="products">
 
-
   <div id="products" class="min-w-full grid grid-cols-1 md:grid-cols-3 space-x-6 px-8 mt-16 mb-6 mx-auto">
     <%= render @products %>
   </div>
-
   <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
-
 
 </section>
 
