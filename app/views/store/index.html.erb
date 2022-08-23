@@ -29,7 +29,7 @@
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
             </button>
           </div>
-          <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+          <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-cta" data-controller="scroll-page-with-element">
             <ul class="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
 
               <li>
@@ -39,10 +39,14 @@
                 <%= link_to 'Women', store_path(:gender => 'women'), class:"block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0" %>
               </li>
               <li>
-                <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</a>
+                <button data-action="click->scroll-page-with-element#scrollToElement"
+                        data-scroll-page-with-element-id-param="products"
+                        class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Best Seller</button>
               </li>
               <li>
-                <a href="#about" class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</a>
+                <button data-action="click->scroll-page-with-element#scrollToElement"
+                        data-scroll-page-with-element-id-param="about"
+                        class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</button>
               </li>
               <li class="block md:hidden">
                 <%= form_tag store_path, method: :get do %>
@@ -68,23 +72,24 @@
 
 
 <!-- Stimulus ile hidden yap ve geri gelme tuşuna basıldığında turbo visit ile store page'e replace at -->
-<% unless has_gender? %>
-  <section id="products" >
-    <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16">
-      <div class="relative">
-        <%= link_to 'Men' , store_path(:gender => 'men'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"  %>
-          <div class="flex flex-wrap content-center relative">
-            <%= link_to image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]"), store_path(:gender => 'men') %>
-          </div>
+
+  <section>
+    <% unless has_gender? %>
+      <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16">
+        <div class="relative">
+          <%= link_to 'Men' , store_path(:gender => 'men'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"  %>
+            <div class="flex flex-wrap content-center relative">
+              <%= link_to image_tag("https://beyyoglu.akinoncdn.com/products/2022/01/27/28830/e846532b-2d09-4214-a1e8-58e89af8fccb_size826x1222.jpg", :class => "w-[600px]"), store_path(:gender => 'men') %>
+            </div>
+        </div>
+        <div class="relative mt-4 md:mt-0">
+          <%= link_to 'Women' , store_path(:gender => 'women'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300" %>
+            <div class="flex flex-wrap content-center relative">
+              <%= link_to image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]"), store_path(:gender => 'women')%>
+            </div>
+        </div>
       </div>
-      <div class="relative mt-4 md:mt-0">
-        <%= link_to 'Women' , store_path(:gender => 'women'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300" %>
-          <div class="flex flex-wrap content-center relative">
-            <%= link_to image_tag("https://st2.myideasoft.com/shop/du/42/myassets/products/684/death-note-03-siyah-kadin-oversize-tshirt-tisort-443209-jpg.jpeg?revision=1654140983", :class => "w-[600px]"), store_path(:gender => 'women')%>
-          </div>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
 
     <div id="products" class="container mx-auto flex justify-between items-start mt-16 mb-6">
 
@@ -170,8 +175,8 @@
 
     <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
   </section>
-<section id="about">
-  <div id="contact" class="bg-gradient-to-r from-black to-gray-500 h-auto flex justify-between items-center mx-auto grid lg:grid-cols-2 pt-8 lg:pt-0">
+<section>
+  <div id="about" class="bg-gradient-to-r from-black to-gray-500 h-auto flex justify-between items-center mx-auto grid lg:grid-cols-2 pt-8 lg:pt-0">
     <div>
       <div class="text-center">
         <h1 class="text-7xl font-bold text-white">Norecture</h1>
