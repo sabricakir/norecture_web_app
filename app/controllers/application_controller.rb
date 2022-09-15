@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include StoreHelper
-  helper_method :has_gender?
+  helper_method :has_params?
   include TurboHelper
 
 end
