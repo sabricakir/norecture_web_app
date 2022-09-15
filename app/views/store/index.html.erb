@@ -10,20 +10,20 @@
             <p>Store</p>
           </div>
 
-          <div class="flex lg:order-2">
+          <div class="flex md:order-2">
             <%= form_tag store_path, method: :get, class:"hidden md:flex" do %>
-              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
               <div class="relative">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
-                <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+                <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
+                <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2" %>
               </div>
 
             <% end %>
 
-            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
                     aria-controls="navbar-cta" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
@@ -49,17 +49,19 @@
                         class="block py-2 pr-4 pl-3 text-gray-800 rounded hover:bg-sky-900 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About</button>
               </li>
               <li class="block md:hidden">
+            
                 <%= form_tag store_path, method: :get do %>
-                  <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-                  <div class="relative">
-                    <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                      <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    </div>
-                    <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"%>
-                    <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
-                  </div>
+              <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
+              <div class="relative">
+                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
+                <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2" %>
+              </div>
 
-                <% end %>
+            <% end %>
+
               </li>
             </ul>
 
@@ -74,8 +76,8 @@
 <!-- Stimulus ile hidden yap ve geri gelme tuşuna basıldığında turbo visit ile store page'e replace at -->
 
   <section>
-    <% unless has_gender? %>
-      <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16">
+    <% unless has_params? %>
+      <div class="grid md:grid-cols-2 flex justify-items-center px-16 mt-8 mb-16" >
         <div class="relative">
           <%= link_to 'Men' , store_path(:gender => 'men'),class:"text-3xl font-medium absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"  %>
             <div class="flex flex-wrap content-center relative">
@@ -91,83 +93,79 @@
       </div>
     <% end %>
 
-    <div id="products" class="container mx-auto flex justify-between items-start mt-16 mb-6">
+    <div id="products" class=" lg:mx-16 lg:flex-row flex justify-between lg:items-start items-center mt-16 mb-6 flex-col ">
+      <aside class="lg:mt-6 w-full lg:w-64 items-center justify-center flex lg:flex-col  mb-16 lg:mb-0" aria-label="Sidebar">
+          <div class="hidden lg:flex">
+          <br>
+          <hr>
+          <br>
+            <ul>
+              <li>
+                <%= link_to 'Men', store_path(gender: 'men'), class: "flex items-center p-2  w-32 text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'Women', store_path(gender: 'women'), class: "flex items-center p-2  w-32 text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+            </ul>
+          </div>
+            <!--
+          <br>
+          <hr>
+          <br>
+          <div>
+            <ul>
+              <li>
+                <%= link_to 'Black', store_path(color: 'Black'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'Green', store_path(color: 'Green'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+            </ul>
+          </div> -->
+          
+          <div>
+          <br>
+          <hr>
+          <br>
+            <ul>
+              <li>
+                <%= link_to 'Product Type 1', store_path(product_type: 'Product-type-1'), class: "flex items-center p-2 w-32 text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'Product Type 2', store_path(product_type: 'Product-type-2'), class: "flex items-center p-2 w-32 text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+            </ul>
+          </div>
+        
+          <!--
+          <hr>
+          <br>
+          <div>
+            <ul>
+              <li>
+                <%= link_to 'descending price', store_path(descending_price: true), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'ascending price', store_path(ascending_price: true), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'less than 125$', store_path(less_than_price: 125), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black"%>
+              </li>
+              <li>
+                <%= link_to '125-150$', store_path(price_range: [125,150]), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black"%>
+              </li>
+              <li>
+                <%= link_to '150-200$', store_path(price_range: [150,200]), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+              <li>
+                <%= link_to 'more than 200$', store_path(more_than_price: 200), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
+              </li>
+            </ul>
+          </div>-->
 
-      <aside class="w-64" aria-label="Sidebar">
-        <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
-          <ul class="space-y-2">
-            <li>
-              <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-1" data-collapse-toggle="dropdown-1">
-                <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item="">Gender</span>
-                <svg sidebar-toggle-item="" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <ul id="dropdown-1" class="hidden py-2 space-y-2">
-                <li>
-                  <%= link_to 'Men', store_path(gender: 'men'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'Women', store_path(gender: 'women'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-2" data-collapse-toggle="dropdown-2">
-                <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item="">Color</span>
-                <svg sidebar-toggle-item="" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <ul id="dropdown-2" class="hidden py-2 space-y-2">
-                <li>
-                  <%= link_to 'Black', store_path(color: 'Black'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'Green', store_path(color: 'Green'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-3" data-collapse-toggle="dropdown-3">
-                <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item="">Product Type</span>
-                <svg sidebar-toggle-item="" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <ul id="dropdown-3" class="hidden py-2 space-y-2">
-                <li>
-                  <%= link_to 'Product Type 1', store_path(product_type: 'Product-type-1'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'Product Type 2', store_path(product_type: 'Product-type-2'), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <button type="button" class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-4" data-collapse-toggle="dropdown-4">
-                <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item="">Price </span>
-                <svg sidebar-toggle-item="" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-              </button>
-              <ul id="dropdown-4" class="hidden py-2 space-y-2">
-                <li>
-                  <%= link_to 'descending price', store_path(descending_price: true), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'ascending price', store_path(ascending_price: true), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'less than 125$', store_path(less_than_price: 125), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to '125-150$', store_path(price_range: [125,150]), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to '150-200$', store_path(price_range: [150,200]), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-                <li>
-                  <%= link_to 'more than 200$', store_path(more_than_price: 200), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"%>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
       </aside>
-      <div class="min-w-full grid grid-cols-1 md:grid-cols-3 space-x-6 px-8">
+
+      <div class="min-w-full grid grid-cols-1 lg:grid-cols-3 space-x-6 px-6 md:px-16 lg:pr-36">
         <%= render @products %>
       </div>
     </div>
@@ -199,4 +197,4 @@
 
 <footer class="text-center w-full mt-8 bottom-0 left-0">
   <p class="text-black opacity-75 italic mb-6">© Norecture- 2022</p>
-</footer>
+</footer>f
