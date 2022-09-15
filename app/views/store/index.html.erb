@@ -17,7 +17,7 @@
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
-                <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
+                <%= text_field_tag :contains , params[:contains], placeholder: "Search", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
                 <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2" %>
               </div>
             <% end %>
@@ -50,15 +50,14 @@
               <li class="block md:hidden">
             
                 <%= form_tag store_path, method: :get do %>
-              <label for="default-search" class="mb-2 text-sm font-medium text-gray-800 sr-only ">Search</label>
-              <div class="relative">
-                <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-800 sr-only ">Search</label>
+                <div class="relative">
+                  <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                  </div>
+                  <%= text_field_tag :contains , params[:contains], placeholder: "Search...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
+                  <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2" %>
                 </div>
-                <%= text_field_tag :contains , params[:contains], placeholder: "Ürün Ara...", class:"block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-gray-500 focus:border-gray-500 "%>
-                <%= submit_tag 'Ara', class:"text-white absolute right-2.5 bottom-2.5 bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2" %>
-              </div>
-
             <% end %>
 
               </li>
@@ -72,7 +71,6 @@
 </header>
 
 
-<!-- Stimulus ile hidden yap ve geri gelme tuşuna basıldığında turbo visit ile store page'e replace at -->
 
   <section>
     <% unless has_params? %>
@@ -160,7 +158,8 @@
                 <%= link_to 'more than 200$', store_path(more_than_price: 200), class: "flex items-center p-2 pl-11 w-full text-base font-normal text-gray-600 rounded-lg transition duration-75 group hover:bg-gray-100 hover:text-black "%>
               </li>
             </ul>
-          </div>-->
+          </div>
+          -->
 
       </aside>
 
@@ -172,27 +171,8 @@
 
     <p class="text-xl font-bold flex justify-center mb-14">See More Products</p>
   </section>
-<section>
-  <div id="about" class="bg-gradient-to-r from-black to-gray-500 h-auto flex justify-between items-center mx-auto grid lg:grid-cols-2 pt-8 lg:pt-0">
-    <div>
-      <div class="text-center">
-        <h1 class="text-7xl font-bold text-white">Norecture</h1>
-      </div>
-    </div>
-    <div class="p-16 text-center text-white">
-      <h1 class="text-2xl mb-6">About Us</h1>
-      <p class="px-14">
-        Norecture is a brand that was established in 2022 and produces products for its customers without sacrificing quality. Our vision is to combine fashion and quality. Our brand, which was established for this purpose, continues to design and produce new
-        products every day.
-      </p>
-      <br /><br />
-      <h1 class="text-2xl mb-6">Contact</h1>
-      <p class="px-14">
-        Tel: 05434497929 <br /> Address: Norecture Comp. <br> 132, My Street, <br> Kingston, New York 12401 <br> United States
-      </p>
-    </div>
-  </div>
-</section>
+
+<%= render 'layouts/shared/about'%>
 
 <footer class="text-center w-full mt-8 bottom-0 left-0">
   <p class="text-black opacity-75 italic mb-6">© Norecture- 2022</p>
